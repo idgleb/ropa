@@ -1,17 +1,16 @@
+package gestInvent;
+
 import javax.swing.JOptionPane;
 
+
 public class GestionInventario {
-
-
-    static int[][] inventario;
+    public static int[][] inventario;
     static String[] ropa = {"Camisetas", "Pantalones", "Chaquetas"};
     static String[] tallasColores = {
             "S-rojo", "S-azul", "S-verde",
             "M-rojo", "M-azul", "M-verde",
             "L-rojo", "L-azul", "L-verde"
     };
-
-
     public static void ingresarInventarioInicial() {
         JOptionPane.showMessageDialog(null, " inventario inicial?:");
         for (int i = 0; i < inventario.length; i++) {
@@ -30,8 +29,6 @@ public class GestionInventario {
             }
         }
     }
-
-
     public static int validarNumeroPositivo(String input) {
         for (int i = 0; i < input.length(); i++) {
             if (!Character.isDigit(input.charAt(i))) {
@@ -45,8 +42,6 @@ public class GestionInventario {
             return -1;
         }
     }
-
-
     public static void registrarVenta() {
         JOptionPane.showMessageDialog(null, "Registrar venta:");
 
@@ -105,8 +100,6 @@ public class GestionInventario {
             JOptionPane.showMessageDialog(null, " No hay suficiente.");
         }
     }
-
-
     public static int validarRango(String input, int min, int max) {
         if (input.length() == 0 || !Character.isDigit(input.charAt(0))) {
             return -1;
@@ -118,8 +111,6 @@ public class GestionInventario {
             return -1;
         }
     }
-
-
     public static boolean actualizarInventario(int tipoPrenda, int tallaColor, int cantidadVendida) {
         if (inventario[tipoPrenda][tallaColor] >= cantidadVendida) {
             inventario[tipoPrenda][tallaColor] -= cantidadVendida;
@@ -127,8 +118,6 @@ public class GestionInventario {
         }
         return false;
     }
-
-
     public static void mostrarInventario() {
         StringBuilder reporte = new StringBuilder();
         reporte.append("\nInventario :\n");
@@ -141,4 +130,8 @@ public class GestionInventario {
         }
         JOptionPane.showMessageDialog(null, reporte.toString());
     }
+}
+
+class Gleb{
+
 }
